@@ -20,40 +20,41 @@ import java.util.TimerTask;
 
 
 public class MainWindowController {
-    //******************************************************************inicjalizacje klas
-    StartGame startGame = new StartGame();                                  //klasa zarzadzajaca startem gry, nazwami graczy, ustawieniem kart
-    CardFactor cardFactor = new CardFactor();                               //klasa zarzadzajaca kartami
-    PlayerFactor playerFactor = new PlayerFactor();                         //klasa zarzadzajaca poczynaniami graczy
-    PlayersGameManager playersGameManager = new PlayersGameManager();       //klasa zarzadzajaca graczami
-    PlayerInfoAndStats playerInfoAndStats1= new PlayerInfoAndStats();       //gracz nr 1
-    PlayerInfoAndStats playerInfoAndStats2= new PlayerInfoAndStats();       //gracz nr 2
+
+    //***************init classes***************//
+    StartGame startGame = new StartGame();                                  //class menage to start the game, set cards
+    CardFactor cardFactor = new CardFactor();                               //class which menage cards
+    PlayerFactor playerFactor = new PlayerFactor();                         //class menage about what players do
+    PlayersGameManager playersGameManager = new PlayersGameManager();       //class menage players
+    PlayerInfoAndStats playerInfoAndStats1= new PlayerInfoAndStats();       //player number 1
+    PlayerInfoAndStats playerInfoAndStats2= new PlayerInfoAndStats();       //player number 2
+
+    //***************variables and tabs***************//
     int counterTimer=0;
-    private int numberOfPlayer;                                             //zmienna przechowujaca numer aktualnie grajacego gracza
-    public int[] memoryCardInt = new int[12];
-    private PlayerInfoAndStats[] tabOfPlayersInfoAndStats= {playerInfoAndStats1, playerInfoAndStats2};
+    private int numberOfPlayer;                                             //var keep number currently playing gamer
+    public int[] memoryCardInt = new int[12];                               //tab that is holding number of memory card
+    private PlayerInfoAndStats[] tabOfPlayersInfoAndStats= {playerInfoAndStats1, playerInfoAndStats2};  //tab that is holding playersInfoAndStats objects
+    private int counterTurn = 0;                                            //variable of the first move (0=first move)
 
-//***************************************************************************kontrolki FXML
+    //***************FXML contolers***************//
 @FXML
-    Button StartButton, oneMoreTimeButton;
+    Button StartButton, oneMoreTimeButton;          //button to start game, button to play one more time
 @FXML
-    TextField Player1TextField;
+    TextField Player1TextField, Player2TextField;   //textfield where player write his name
 @FXML
-    TextField Player2TextField;
+    Label Player1Label,Player2Label;                //labels in start menu
 @FXML
-    Label Player1Label;
+    Label  Warning3LessThanLettersLabel;            //label where you can see warning about
 @FXML
-    Label Player2Label;
+    ImageView image0, image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11;     //images - back of cards
 @FXML
-    Label  Warning3LessThanLettersLabel;
+    ImageView MemoryCard0, MemoryCard1, MemoryCard2, MemoryCard3, MemoryCard4, MemoryCard5, MemoryCard6, MemoryCard7, MemoryCard8, MemoryCard9, MemoryCard10, MemoryCard11; //hidden cards
 @FXML
-    ImageView image0, image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11;
-@FXML
-    ImageView MemoryCard0, MemoryCard1, MemoryCard2, MemoryCard3, MemoryCard4, MemoryCard5, MemoryCard6, MemoryCard7, MemoryCard8, MemoryCard9, MemoryCard10, MemoryCard11;
-@FXML
-    Label player1Name, player2Name, endGameLabel;
+    Label player1Name, player2Name, endGameLabel;   //labels where you can see player name
 
-//*EKRAN STARTOWY WPISYWANIA NAZWY GRACZY*
-    //inicjalizator
+    //*START WINDOW*//
+
+    //***************init method***************//
     @FXML
     public void initialize()
     {
@@ -72,14 +73,14 @@ public class MainWindowController {
         this.numberOfPlayer = numberOfPlayer;
     }
 
-    //hide or show playerName labels
+    //***************hide or show playerName labels***************//
     public void setPlayerNrName(boolean hideValue)
     {
         player1Name.setVisible(hideValue);
         player2Name.setVisible(hideValue);
     }
 
-    //set names of player to labels
+    //***************set names of player to labels***************//
     public void setPlayerNrName(String namePlayer1, String namePlayer2, boolean showValue)
     {
         player1Name.setVisible(showValue);
@@ -93,12 +94,14 @@ public class MainWindowController {
         return memoryCardInt;
     }
 
-    //metoda z przeciazeniem ukrywajaca lub ukazujaca zakryte karty gry
+    //***************hide or show back cards***************//
     public void hideShowBackCards(int numberOfCard, boolean boolValue)
     {
         ImageView[] tabOfImages = {image0, image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11};
         tabOfImages[numberOfCard].setVisible(boolValue);
     }
+
+    //***************hide or show all back cards***************//
     public void hideShowBackCards(boolean boolValue){
         ImageView[] tabOfImages = {image0, image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11};
         for(int i=0; i<12; i++)
@@ -107,13 +110,13 @@ public class MainWindowController {
         }
     }
 
-    //metoda ukrywajaca/ukazujaca tyl karty
+    //***************hide or show  memory card***************//
     public void showMemoryCard(int numberOfCard, boolean hideOrShowValue)
     {
         ImageView[] tabOfImages = {MemoryCard0, MemoryCard1, MemoryCard2, MemoryCard3, MemoryCard4, MemoryCard5, MemoryCard6, MemoryCard7, MemoryCard8, MemoryCard9, MemoryCard10, MemoryCard11};
         tabOfImages[numberOfCard].setVisible(hideOrShowValue);
     }
-    //ukrywanie
+    //***************hide or show all memory card***************//
     public void showMemoryCard( boolean hideOrShowValue)
     {
         ImageView[] tabOfImages = {MemoryCard0, MemoryCard1, MemoryCard2, MemoryCard3, MemoryCard4, MemoryCard5, MemoryCard6, MemoryCard7, MemoryCard8, MemoryCard9, MemoryCard10, MemoryCard11};
@@ -122,10 +125,13 @@ public class MainWindowController {
         }
     }
 
+    //***************click on start button action***************//
     public void StartButtonClick(ActionEvent event) {
 
+        //get the player names from textfields
         startGame.setNamePlayer1(Player1TextField.getText());
         startGame.setNamePlayer2(Player2TextField.getText());
+
 
         if(startGame.StartGameButton()=="Ok")
         {
@@ -140,7 +146,7 @@ public class MainWindowController {
             setPlayerInfoAndStatsNames(startGame.getNamePlayer1(), startGame.getNamePlayer2());
             setPlayerNrName(startGame.getNamePlayer1(), startGame.getNamePlayer2(), true);
 
-            //ustawianie napisu nazwy pierwszego gracza na bold
+            //change first player name to BOLD inscription
             int numberOfPlayer = playersGameManager.whosTurn("abstract");
             setPlayerInfoAndsStatsNamesBold(numberOfPlayer);
         }
@@ -149,14 +155,14 @@ public class MainWindowController {
             Player1TextField.setStyle("-fx-text-fill: red");
             Player2TextField.setStyle("-fx-text-fill: black");
             Warning3LessThanLettersLabel.setAlignment(Pos.CENTER);
-            Warning3LessThanLettersLabel.setText("Nazwa użytkownika musi zawierać co najmniej 3 znaki");
+            Warning3LessThanLettersLabel.setText("Name of the user must contains at least 3 signs");
         }
         if(startGame.StartGameButton()=="Player2TextProblem")
         {
             Player2TextField.setStyle("-fx-text-fill: red");
             Player1TextField.setStyle("-fx-text-fill: black");
             Warning3LessThanLettersLabel.setAlignment(Pos.CENTER);
-            Warning3LessThanLettersLabel.setText("Nazwa użytkownika musi zawierać co najmniej 3 znaki");
+            Warning3LessThanLettersLabel.setText("Name of the user must contains at least 3 signs");
         }
 
         if(startGame.StartGameButton()=="Player1&2TextProblems")
@@ -164,14 +170,14 @@ public class MainWindowController {
             Player1TextField.setStyle("-fx-text-fill: red");
             Player2TextField.setStyle("-fx-text-fill: red");
             Warning3LessThanLettersLabel.setAlignment(Pos.CENTER);
-            Warning3LessThanLettersLabel.setText("Nazwa użytkownika musi zawierać co najmniej 3 znaki");
+            Warning3LessThanLettersLabel.setText("Names of the users must contains at least 3 signs");
         }
 
     }
 
-    //EKRAN WŁASCIWY GRY
+    //*START WINDOW*//
 
-    //set images to hidden images
+    //***************set images to hidden images***************//
     public void setHiddenCards()
     {
         ImageView[] tabOfImages = {MemoryCard0, MemoryCard1, MemoryCard2, MemoryCard3, MemoryCard4, MemoryCard5, MemoryCard6, MemoryCard7, MemoryCard8, MemoryCard9, MemoryCard10, MemoryCard11};
@@ -194,7 +200,8 @@ public class MainWindowController {
             tabOfImages[i].setImage(imageWeatherCondition);
         }
     }
-    //akcja klikniecia w obrazki
+
+    //***************click on backcards action***************//
     public void image0Click(MouseEvent event)
     {
         int numberOfImage = 0;
@@ -254,7 +261,8 @@ public class MainWindowController {
         int numberOfImage = 11;
         imageClickAction(numberOfImage);
     }
-    //akcja po kliknieciu w obrazek
+
+    //***************action after clicking on backcard image***************//
     public void imageClickAction(int numberOfImage)
     {
         hideShowBackCards(numberOfImage, false);
@@ -262,12 +270,12 @@ public class MainWindowController {
         playerFactor.showedCardsSaver(numberOfImage);
         gameMaster();
     }
-//metoda sterujaca chowaniem kart gdy nie sa takie same lub ich zostawieniem gdy sa takie same
-    //ogarnij punkty
+
+    //***************card hide or not to hide control method, check when game is over***************//
     public void gameMaster()
     {
-        //sprawdzenie czyja aktualnie kolej
 
+        //check whos turn is currently
         if((playerFactor.getMove()==2 || playerFactor.getMove()==4) && (playerFactor.cardChecker().equals("notTheSame")))
         {
             String decision = playerFactor.cardChecker();
@@ -275,12 +283,13 @@ public class MainWindowController {
             setPlayerInfoAndsStatsNamesBold(getNumberOfPlayer());
 
             Timer timer = new Timer();                                               //timer class initialization
-            int[] tabOfCardsClickedCards = playerFactor.getTabOfShowedCards();       //
+            int[] tabOfCardsClickedCards = playerFactor.getTabOfShowedCards();       //tab where the numbers of clicked cards are
 
-            //wylaczanie klikalnosci aktywnych kart
+            //turn off "Click-Throughs" of backcards
             setDisableHiddenImages(true);
             for(int i=0; i<2; i++) {
-                //Function delayed to 2 minutes, it's beacuse player must see chosen cards
+
+                //Function delayed to 2 seconds, it's beacuse player must see chosen cards
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
@@ -290,7 +299,7 @@ public class MainWindowController {
                         if(counterTimer>1){
                             counterTimer=0;
                         }
-                        //wlaczanie klikalnosci zakrytych kart
+                        //turn on "Click-Throughs" of backcards
                         setDisableHiddenImages(false);
                     }
                 }
@@ -309,13 +318,13 @@ public class MainWindowController {
         endGame();
     }
 
-//***************************************************************method checked point of the player and says when is the end
+    //***************method checked point of the player and says when is the end***************//
     public void endGame()
     {
         //check if the game is over and run end action
         if(playersGameManager.checkerGameIsOverOrNot(playerInfoAndStats1, playerInfoAndStats2)=="gameIsOver")
         {
-            //show label and button
+            //show wining player label and one more time button
             endGameLabel.setVisible(true);
             oneMoreTimeButton.setVisible(true);
 
@@ -345,10 +354,11 @@ public class MainWindowController {
 
     }
 
-    //******************************************************************button start a new game after win
+    //***************button start a new game after win***************//
+    //!WORK IN PROGRESS!//
     public void oneMoreTimeButtonClick(ActionEvent event)
     {
-        //wyzeruj tablice punktow i wyzeruj punkty graczy
+        //!set 0 to player points and tab of points!//
         initialize();
         StartButton.setVisible(true);
         Player1TextField.setVisible(true);
@@ -365,7 +375,7 @@ public class MainWindowController {
         }
     }
 
-    //***********************************************************set to "frozen" images after click two memory images and not find convergence
+    //***************set to "frozen" images after click two memory images and not find convergence***************//
     public void setDisableHiddenImages(boolean boolValue){
         ImageView[] tabOfImages = {image0, image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11};
         for(int i=0; i<12; i++)
@@ -373,25 +383,27 @@ public class MainWindowController {
             tabOfImages[i].setDisable(boolValue);
         }
     }
-    //przekazywanie nazw uzytownikow do obiektow playerInfoAndStats
+
+    //***************give player names to playerInfoAndStats objects***************//
     public void setPlayerInfoAndStatsNames(String name1, String name2){
         playerInfoAndStats1.setPlayerName(name1);
         playerInfoAndStats2.setPlayerName(name2);
     }
 
-    //metoda ukazujaca czyja kolej jest aktualnie oraz licznik dla pierwszej zmiany
-    private int counterTurn = 0;                                                            //zmienna okreslajaca pierwszy ruch *0=pierwszy ruch*
-
+    //***************method shows who play now***************//
     public void setPlayerInfoAndsStatsNamesBold(int numberOfPlayerPlayed){
 
-        Label[] tabOfLabels = {player1Name, player2Name};                                   //tabela Label'i z nazwami graczy
-        String tempLabelText = tabOfLabels[numberOfPlayerPlayed].getText();                 //pobieranie nazwy gracza do zmiennej tymczasowej
+        Label[] tabOfLabels = {player1Name, player2Name};                                   //tab of labels with names players
+        String tempLabelText = tabOfLabels[numberOfPlayerPlayed].getText();                 //get player name
         tabOfLabels[numberOfPlayerPlayed].setText("Your Turn " + tempLabelText);
         tabOfLabels[numberOfPlayerPlayed].setFont(Font.font("Verdana", 20));
 
+        //check if the turn is not the first
         if(counterTurn!=0)
         {
-            int notYourTurn=9;
+            int notYourTurn=9;                  //variable of player who play in next turn
+
+            //switch notYourTurn variable to number of player who play in the next turn
             switch (numberOfPlayerPlayed){
                 case 1:
                     notYourTurn=0;

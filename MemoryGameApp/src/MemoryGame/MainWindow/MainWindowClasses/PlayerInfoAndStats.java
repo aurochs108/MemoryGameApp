@@ -1,12 +1,13 @@
 package MemoryGame.MainWindow.MainWindowClasses;
 
 public class PlayerInfoAndStats {
-    private int playerPoints = 0;
-    private String playerName;
+    private int playerPoints = 0;               //var of player points, init value is 0
+    private String playerName;                  //player name var
 
     public PlayerInfoAndStats() {
         playerName = "";
     }
+
     public PlayerInfoAndStats(String name) {
         playerName = name;
     }

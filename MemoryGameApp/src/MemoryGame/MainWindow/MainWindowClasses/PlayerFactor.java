@@ -2,12 +2,12 @@ package MemoryGame.MainWindow.MainWindowClasses;
 
 public class PlayerFactor {
 
-    private int round = 0;
-    private int move = 0;
-    private int[] tabOfShowedCards = new int[2];
-    private int[] tabOfCards = new int[12];
+    private int round = 0;                           //round counter
+    private int move = 0;                            //move counter
+    private int[] tabOfShowedCards = new int[2];     //numbers of showed cards
+    private int[] tabOfCards = new int[12];          //numbers of memory cards
 
-    //*********************************************gettery settery
+
     public int getRound() {
         return round;
     }
@@ -28,20 +28,19 @@ public class PlayerFactor {
         return tabOfShowedCards;
     }
 
-    //dodawanie ruchów
     public void addMove() {
         move++;
+
         if (move > 4) {
             addRound();
         }
     }
 
-    //dodawanie rundy
     public void addRound() {
         round++;
     }
 
-    //*******************************************zamiana wartosci w tablicy ukazanych kart na wartosci abstrakcyjne
+    //***************change values in tab to abstract***************//
     public void setTabOfShowedCardsToAbstract() {
         tabOfShowedCards[0] = 99;
         tabOfShowedCards[1] = 88;
@@ -55,14 +54,17 @@ public class PlayerFactor {
         return tabOfCards;
     }
 
-    //*******************************************wczytywanie numeru odkrytej karty
+    //***************load number show memory card***************//
     public void showedCardsSaver(int numberOfCard) {
         addMove();
-        //*****************************************usuwanie danych z tablicy
+
+        //set to abstract value of show memory card in tab
         if (move > 4) {
             setTabOfShowedCardsToAbstract();
             move = 1;
         }
+
+        //save the number of showed backcard
         if (move == 1 || move == 3) {
             tabOfShowedCards[0] = numberOfCard;
         }
@@ -70,12 +72,14 @@ public class PlayerFactor {
             tabOfShowedCards[1] = numberOfCard;
         }
     }
-    //sprawdzanie czy karty sa takie same
+
+    //***************check if the cards are the same***************//
     public String cardChecker()
     {
-        int[] tabOfCards = getTabOfCards();                             //przekazanie tablicy z wylosowanymi numerami kart
+        int[] tabOfCards = getTabOfCards();
         int[] showedCardsTab = getTabOfShowedCards();                   //tablica wybranych przez uzytkownika dwoch kart
 
+        //check if the cards are the same or not
         if(tabOfCards[showedCardsTab[0]]==tabOfCards[showedCardsTab[1]])
         {
             return "theSame";

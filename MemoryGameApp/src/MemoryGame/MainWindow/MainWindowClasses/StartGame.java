@@ -4,7 +4,7 @@ public class StartGame {
     private String namePlayer1;
     private String namePlayer2;
 
-//*********************************************************player 1
+// - player 1
     public String getNamePlayer1() {
         return namePlayer1;
     }
@@ -12,7 +12,8 @@ public class StartGame {
     public void setNamePlayer1(String namePlayer1) {
         this.namePlayer1 = namePlayer1;
     }
-//*********************************************************player 2
+
+// - player 2
     public String getNamePlayer2() {
         return namePlayer2;
     }
@@ -21,7 +22,7 @@ public class StartGame {
         this.namePlayer2 = namePlayer2;
     }
 
-    //start button - sprawdzanie czy nazwy uzytkownikow maja minimum 3 znaki
+    //start button - check if the players names contains of minimum 3 sings
     public String StartGameButton()
     {
         if(namePlayer1.length()<3 && namePlayer2.length()<3)

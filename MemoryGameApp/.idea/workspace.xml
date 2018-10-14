@@ -24,12 +24,44 @@
       <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="173" column="33" lean-forward="true" selection-start-line="173" selection-start-column="33" selection-end-line="173" selection-end-column="33" />
-              <folding>
-                <element signature="e#10792#11363#0" expanded="true" />
-                <element signature="e#11362#11363#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="74">
+              <caret line="392" column="4" selection-start-line="392" selection-start-column="4" selection-end-line="392" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerFactor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayerFactor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerInfoAndStats.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayerInfoAndStats.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayersGameManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayersGameManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/StartGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -40,6 +72,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowController.java" />
+        <option value="$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/CardFactor.java" />
+        <option value="$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayerFactor.java" />
+        <option value="$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayerInfoAndStats.java" />
+        <option value="$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayersGameManager.java" />
+        <option value="$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/StartGame.java" />
       </list>
     </option>
   </component>
@@ -53,8 +90,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="74" />
+    <option name="y" value="-17" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -63,7 +100,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -89,11 +126,19 @@
               <item name="MemoryGame" type="462c0819:PsiDirectoryNode" />
               <item name="MainWindow" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MemoryGameApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MemoryGameApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MemoryGame" type="462c0819:PsiDirectoryNode" />
+              <item name="MainWindow" type="462c0819:PsiDirectoryNode" />
+              <item name="MainWindowClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -186,12 +231,14 @@
       <option name="presentableId" value="Default" />
       <updated>1539512188002</updated>
       <workItem from="1539512189519" duration="458000" />
-      <workItem from="1539519174976" duration="35000" />
+      <workItem from="1539519174976" duration="150000" />
+      <workItem from="1539520130360" duration="284000" />
+      <workItem from="1539541827012" duration="5375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493000" />
+    <option name="totallyTimeSpent" value="6267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -199,6 +246,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -206,7 +254,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3290938" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290938" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -224,7 +272,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +279,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/MemoryGame/Main.java">
@@ -243,12 +295,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2771">
-          <caret line="185" column="9" lean-forward="true" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
-          <folding>
-            <element signature="e#10792#11363#0" expanded="true" />
-            <element signature="e#11362#11363#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3349">
+          <caret line="197" column="45" lean-forward="true" selection-start-line="197" selection-start-column="45" selection-end-line="197" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3349">
+          <caret line="197" column="45" lean-forward="true" selection-start-line="197" selection-start-column="45" selection-end-line="197" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -261,12 +323,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="173" column="33" lean-forward="true" selection-start-line="173" selection-start-column="33" selection-end-line="173" selection-end-column="33" />
-          <folding>
-            <element signature="e#10792#11363#0" expanded="true" />
-            <element signature="e#11362#11363#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2771">
+          <caret line="185" column="9" lean-forward="true" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/CardFactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayerFactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayerInfoAndStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/PlayersGameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowClasses/StartGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryGame/MainWindow/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="392" column="4" selection-start-line="392" selection-start-column="4" selection-end-line="392" selection-end-column="63" />
         </state>
       </provider>
     </entry>

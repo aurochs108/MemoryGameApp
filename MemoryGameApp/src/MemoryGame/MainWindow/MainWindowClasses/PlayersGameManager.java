@@ -2,7 +2,6 @@ package MemoryGame.MainWindow.MainWindowClasses;
 
 import java.util.Random;
 
-//klasa zarządzajaca punktami graczy, ich kolejnością kto w danej chwili gra
 public class PlayersGameManager {
 
     private int playersTurn;
@@ -23,9 +22,10 @@ public class PlayersGameManager {
         }
     }
 
-    //zarzadzanie czyja aktualnie jest kolej i komu przyznac punkt
+    //***************menage who currently can play and who can get the point***************//
     public int whosTurn(String argument){
-        //losowanie przy pierwszym uruchomieniu czyja kolej
+
+        //rand who is the first
         if(randFirstPlayerTurn==false)
         {
             Random random = new Random();
