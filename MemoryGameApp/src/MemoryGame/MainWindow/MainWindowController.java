@@ -171,7 +171,7 @@ public class MainWindowController {
 
     //EKRAN WŁASCIWY GRY
 
-    //ustawianie obrazkow dla ukrytych kart
+    //set images to hidden images
     public void setHiddenCards()
     {
         ImageView[] tabOfImages = {MemoryCard0, MemoryCard1, MemoryCard2, MemoryCard3, MemoryCard4, MemoryCard5, MemoryCard6, MemoryCard7, MemoryCard8, MemoryCard9, MemoryCard10, MemoryCard11};
